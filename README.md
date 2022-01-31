@@ -23,3 +23,6 @@ Things you may want to cover:
 
 * ...
 # HR_System
+* Models and controllers were created. 
+# The video of the running code:
+Link: https://drive.google.com/file/d/1iXUtNgeAPLbCPJtuEIfBF_zWmhe10G8J/view?usp=sharing
