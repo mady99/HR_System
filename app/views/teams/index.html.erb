@@ -36,16 +36,16 @@
 
   <% @teams = Team.all %>
 
-  <h1>Teams Table</h1>
+  <h1><%= t 'teams.index.teams'%></h1>
 
   <div id="teams">
       <table id="teams">
         <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Members</th>
-          <th>Team Lead</th>
+          <th><%= t 'teams.index.ID'%></th>
+          <th><%= t 'teams.index.Name'%></th>
+          <th><%= t 'teams.index.Description'%></th>
+          <th><%= t 'teams.index.Members'%></th>
+          <th><%= t 'teams.index.Team lead'%></th>
         </tr>
          <% @teams.each do |team| %>
             <tr>
@@ -66,16 +66,16 @@
             </tr>
             <tr>
               <td>
-              <button class="w3-bar-item w3-button"> <%= link_to "Show this team", team %> </button>
+              <button class="w3-bar-item w3-button"> <%= link_to I18n.t('button.show'), team %> </button>
               </td>
             </tr>
         <% end %>
       </table>
   </div>
   <br>
-  <button class="w3-bar-item w3-button"> <%= link_to "New team", new_team_path %> </button>
+  <button class="w3-bar-item w3-button"> <%= link_to I18n.t('button.newteam'), new_team_path %> </button>
   <br>
   <br>
-  <a href="http://[::1]:3000" class="w3-bar-item w3-button">Back to Main</a>
+  <a href="http://[::1]:3000/?locale=en" class="w3-bar-item w3-button"><%= t 'button.back' %></a>
 </body>
 </html>

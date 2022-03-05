@@ -1,4 +1,6 @@
 ar:
+  main:
+    HR System: نظام الموارد البشرية
   users:
     index:
       users: "المستخدمون"
@@ -7,16 +9,17 @@ ar:
       Email: "البريد الالكتروني"
       Password: "كلمة المرور"
       Links: "الروابط"
-  team:
+  teams:
     index:
       teams: "الفرق"
-      name: "الاسم"
-      description: "الوصف"
-      team_lead: "قائد الفريق"
+      Name: "الاسم"
+      Description: "الوصف"
+      Team lead: "قائد الفريق"
       divisions_id: "القسم"
-      members: "الأعضاء"
-      id: "الهوية شخصية"
+      Members: "الأعضاء"
+      ID: "الهوية شخصية"
       Links: "الروابط"
+      New team: "فريق جديد"
     show:
       name: "الاسم"
       description: "الوصف"
@@ -24,14 +27,14 @@ ar:
       divisions_id: "القسم"
       members: "الأعضاء"
       id: "الهوية شخصية"
-  division:
+  divisions:
     index:
-      division: "القسم"
-      id: "الهوية شخصية"
-      name: "الاسم"
-      description: "الوصف"
-      teams: "الفرق"
-      manager: "المدير"
+      Division: "القسم"
+      ID: "الهوية شخصية"
+      Name: "الاسم"
+      Description: "الوصف"
+      Teams: "الفرق"
+      Manager: "المدير"
       links: "الروابط"
     show:
       division: "القسم"
@@ -41,16 +44,16 @@ ar:
       teams: "الفرق"
       manager: "المدير"
       links: "الروابط"
-  target:
+  goals:
     index:
-      target: الأهداف
-      title: "اللقب"
-      id: "الهوية شخصية"
-      description: "الوصف"
-      start: "تاريخ البدء"
-      finish: "تاريخ الانتهاء"
-      team: "الفريق"
-      status: الحالة
+      Target: الأهداف
+      Title: "اللقب"
+      ID: "الهوية شخصية"
+      Description: "الوصف"
+      Start Date: "تاريخ البدء"
+      Finish Date: "تاريخ الانتهاء"
+      Teams: "الفريق"
+      Status: الحالة
       links: الروابط
     show:
       target: الأهداف
@@ -62,15 +65,15 @@ ar:
       team: "الفريق"
       status: الحالة
       links: الروابط
-  employee:
+  employees:
     index:
-      emp: الموظفين
-      id: الهوية شخصية
-      name: الاسم
-      email: البريد الالكتروني
-      job: الوظيفة
-      salary: الراتب
-      status: الحالة
+      Employees: الموظفين
+      ID: الهوية شخصية
+      Name: الاسم
+      Email: البريد الالكتروني
+      Job: الوظيفة
+      Salary: الراتب
+      Employment Status: الحالة
       team_id: الفريق
       links: الروابط
     show:
@@ -118,7 +121,7 @@ ar:
 
 
   button:
-    back: للخلف
+    back: العودة للقائمة
     signin: تسجيل الدخول
     signup: الاشتراك
     signout: الخروج
@@ -131,7 +134,7 @@ ar:
     newemp: اضافة موظف جديد
     newtar: إضافة هدف جديد
     newteam: اضافة فريق جديد
-
+    Arabic: العربية
 
 
 
@@ -207,4 +210,3 @@ ar:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:" 
-        

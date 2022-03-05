@@ -32,6 +32,8 @@
 en:
   hello: "Hello world"
 
+  main:
+    HR System: HR System
   users:
     index:
       users: "Users"
@@ -52,6 +54,7 @@ en:
       members: "Members"
       id: "ID"
       Links: "Links"
+      new tam: "New team"
     show:
       name: "Name"
       description: "Description"
@@ -76,7 +79,7 @@ en:
       teams: "Teams"
       manager: "Manager"
       links: "Links"
-  target:
+  goals:
     index:
       target: Targets
       title: "Title"
@@ -165,3 +168,4 @@ en:
     newemp: Add New Employee
     newtar: Add New Target
     newteam: Add New Team
+    Arabic: Arabic

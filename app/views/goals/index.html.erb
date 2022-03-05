@@ -36,19 +36,19 @@
 
   <% @goals = Goal.all %>
 
-  <h1>Goals Table</h1>
+  <h1><%= t 'goals.index.Target' %></h1>
 
   <div id="goals">
       <table id="goals">
         <tr>
-          <th>ID</th>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Start Date</th>
-          <th>Finish Date</th>
-          <th>Attribute</th>
-          <th>Teammss</th>
-          <th>Status</th>
+          <th><%= t 'goals.index.ID' %></th>
+          <th><%= t 'goals.index.Title' %></th>
+          <th><%= t 'goals.index.Description' %></th>
+          <th><%= t 'goals.index.Start Date' %></th>
+          <th><%= t 'goals.index.Finish Date' %></th>
+          <th><%= t 'goals.index.Attribute' %></th>
+          <th><%= t 'goals.index.Teams' %></th>
+          <th><%= t 'goals.index.Status' %></th>
         </tr>
          <% @goals.each do |goal| %>
             <tr>
@@ -63,16 +63,16 @@
             </tr>
             <tr>
               <td>
-              <button class="w3-bar-item w3-button"> <%= link_to "Show this goal", goal %> </button>
+              <button class="w3-bar-item w3-button"> <%= link_to I18n.t('button.show'), goal %> </button>
               </td>
             </tr>
         <% end %>
       </table>
   </div>
   <br>
-  <button class="w3-bar-item w3-button"> <%= link_to "New goal", new_goal_path %> </button>
+  <button class="w3-bar-item w3-button"> <%= link_to I18n.t('button.newtar'), new_goal_path %> </button>
   <br>
   <br>
-  <a href="http://[::1]:3000" class="w3-bar-item w3-button">Back to Main</a>
+  <a href="http://[::1]:3000/?locale=en" class="w3-bar-item w3-button"><%= t 'button.back' %></a>
 </body>
 </html>

@@ -36,37 +36,46 @@
 
   <% @divisions = Division.all %>
 
-  <h1>Divisions Table</h1>
+  <h1><%= t 'divisions.index.Division' %></h1>
 
   <div id="divisions">
       <table id="divisions">
         <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Teams</th>
-          <th>Manager</th>
+          <th><%= t 'divisions.index.ID' %></th>
+          <th><%= t 'divisions.index.Name' %></th>
+          <th><%= t 'divisions.index.Description' %></th>
+          <th><%= t 'divisions.index.Teams' %></th>
+          <th><%= t 'divisions.index.Manager' %></th>
         </tr>
          <% @divisions.each do |division| %>
             <tr>
               <td><%=division.id %></td>
               <td><%=division.name %>  </td>
               <td><%=division.description %></td>
-              <td><%=division.teams%></td>
+              <td>
+                    <%y=2%>
+                    <%while y<division.teams.length %>
+                      <%= Team.find(division.teams[y].to_i).name %> 
+                      <% y = y+5%>
+                      <%if y<division.teams.length%>
+                        -
+                      <%end%>
+                    <%end%>
+              </td>
               <td><%=division.manager %></td>
             </tr>
             <tr>
               <td>
-              <button class="w3-bar-item w3-button"> <%= link_to "Show this division", division %> </button>
+              <button class="w3-bar-item w3-button"> <%= link_to I18n.t('button.show'), division %> </button>
               </td>
             </tr>
         <% end %>
       </table>
   </div>
   <br>
-  <button class="w3-bar-item w3-button"> <%= link_to "New division", new_division_path %> </button>
+  <button class="w3-bar-item w3-button"> <%= link_to I18n.t('button.newdiv'), new_division_path %> </button>
   <br>
   <br>
-  <a href="http://[::1]:3000" class="w3-bar-item w3-button">Back to Main</a>
+  <a href="http://[::1]:3000/?locale=en" class="w3-bar-item w3-button"><%= t 'button.back' %></a>
 </body>
 </html>

@@ -15,6 +15,7 @@ class User < ApplicationRecord
     after_create do |job|
       mailer(self)
     end
+    
     def mailer(user)
       UserMailer.with(user: user).welcome_mail.deliver_now
     end
