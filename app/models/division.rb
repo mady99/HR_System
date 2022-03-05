@@ -1,9 +1,9 @@
 class Division < ApplicationRecord
-    belongs_to :employee
+    # belongs_to :employee
     has_many :teams
+    has_one :employee
 
     validates :name, presence: true
     validates :description, length: { maximum: 25 }
-    validates :members, presence: true
-    validates :team_lead, presence: true
+    # validates :teams, presence: true
 end

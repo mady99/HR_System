@@ -1,6 +1,6 @@
 class DivisionsController < ApplicationController
   before_action :set_division, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
   # GET /divisions or /divisions.json
   def index
     @divisions = Division.all
@@ -36,6 +36,7 @@ class DivisionsController < ApplicationController
 
   # PATCH/PUT /divisions/1 or /divisions/1.json
   def update
+
     respond_to do |format|
       if @division.update(division_params)
         format.html { redirect_to division_url(@division), notice: "Division was successfully updated." }
@@ -65,6 +66,6 @@ class DivisionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def division_params
-      params.require(:division).permit(:name, :description, :teams, :manager)
+      params.require(:division).permit(:name, :description, :manager, :employee_id, teams_id: [])
     end
 end

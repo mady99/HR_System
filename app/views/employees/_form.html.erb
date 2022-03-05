@@ -37,6 +37,16 @@
   </div>
 
   <div>
+    <%= form.label :team_id, style: "display: block" %>
+    <%= form.select :teams, Team.all.collect{ |p| [p.name, p.id] } %>
+  </div>
+
+  <div>
+    <%= form.label :division_id, style: "display: block" %>
+    <%= form.number_field :division_id %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

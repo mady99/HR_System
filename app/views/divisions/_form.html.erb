@@ -22,13 +22,18 @@
   </div>
 
   <div>
-    <%= form.label :teams, style: "display: block" %>
-    <%= form.text_field :teams %>
+    <%= form.label :teams , style: "display: block" %>
+    <%= form.select :teams, Team.all.collect{ |t| [t.name, t.id] },{:include_hidden => false},{ :multiple => true} %>
   </div>
-
+ 
   <div>
     <%= form.label :manager, style: "display: block" %>
     <%= form.text_field :manager %>
+  </div>
+
+  <div>
+    <%= form.label :employee_id, style: "display: block" %>
+    <%= form.select :employee_id, Employee.all.collect{ |p| [p.name, p.id] } %>
   </div>
 
   <div>

@@ -31,3 +31,137 @@
 
 en:
   hello: "Hello world"
+
+  users:
+    index:
+      users: "Users"
+      back: "Back"
+      add: "Add New User"
+      ID: "ID"
+      Name: "Name"
+      Email: "Email"
+      Password: "Password"
+      Links: "Links"
+  team:
+    index:
+      teams: "Teams"
+      name: "Name"
+      description: "Description"
+      team_lead: "Team Lead"
+      divisions_id: "Division"
+      members: "Members"
+      id: "ID"
+      Links: "Links"
+    show:
+      name: "Name"
+      description: "Description"
+      team_lead: "Team Lead"
+      divisions_id: "Division"
+      members: "Members"
+      id: "ID"
+  division:
+    index:
+      division: "Divisions"
+      id: "ID"
+      name: "Name"
+      description: "Description"
+      teams: "Teams"
+      manager: "Manager"
+      links: "Links"
+    show:
+      division: "Divisions"
+      id: "ID"
+      name: "Name"
+      description: "Description"
+      teams: "Teams"
+      manager: "Manager"
+      links: "Links"
+  target:
+    index:
+      target: Targets
+      title: "Title"
+      id: "ID"
+      description: "Description"
+      start: "Start Date"
+      finish: "Finish Date"
+      team: "Team"
+      status: Status
+      links: Links
+    show:
+      target: Targets
+      title: "Title"
+      id: "ID"
+      description: "Description"
+      start: "Start Date"
+      finish: "Finish Date"
+      team: "Team"
+      status: status
+      links: Links
+  employee:
+    index:
+      emp: Employees
+      id: ID
+      name: Name
+      email: Email
+      job: Job
+      salary: Salary
+      status: Status
+      team_id: Team
+      links: Links
+    show:
+      emp: Employees
+      id: ID
+      name: Name
+      email: Email
+      job: Job
+      salary: Salary
+      status: Status
+      team_id: Team
+      links: Links
+  activerecord:
+    attributes:
+      user:
+        id: "ID"
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        avatar: "Avatar"
+      team:
+        name: "Name"
+        description: "Description"
+        team_lead: "Team lead"
+        divisions_id: "Division"
+      division:
+        name: "Name"
+        description: "Description"
+        manager: "Manager" 
+      target:
+        title: "Title"
+        description: "Description"
+        start: "Start Date"
+        finish: "Finish Date"
+        team: "Team"
+        status: Status
+      employee:
+        name: Name
+        email: Email
+        job: Job
+        salary: Salary
+        status: Status
+        teams_id: Team
+
+  button:
+    back: Back
+    signin: Sign In
+    signup: Sign Up
+    signout: Sign Out
+    delete: Delete
+    submit: Submit
+    show: Show
+    edit: Edit
+    newdiv: Add New Division
+    newuser: Add New User
+    newemp: Add New Employee
+    newtar: Add New Target
+    newteam: Add New Team

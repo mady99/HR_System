@@ -36,15 +36,14 @@
 
   <% @users = User.all %>
 
-  <h1>Users Table</h1>
+  <h1> <%= t 'users.index.Users Table' %> </h1>
 
   <div id="users">
       <table id="users">
         <tr>
-          <th>ID</th>
-          <th>Email</th>
-          <th>Name</th>
-          <th>Password</th>
+          <th><%= t 'users.index.ID'%> </th>
+          <th><%= t 'users.index.Email'%></th>
+          <th><%= t 'users.index.Name'%></th>
         </tr>
          <% @users.each do |user| %>
         
@@ -52,7 +51,6 @@
             <td><%=user.id %></td>
             <td><%=user.email %>  </td>
             <td><%=user.name %></td>
-            <td><%=user.password %></td>
           </tr>
           <tr>
             <td>
@@ -63,7 +61,10 @@
           </table>
   </div>
   <br>
-  <button class="w3-bar-item w3-button"> <%= link_to "New user", new_user_path %> </button>
+     <br>
+    <button class="w3-bar-item w3-button"> <%= link_to 'New User', new_user_registration_path %> </button> 
+    <button class="w3-bar-item w3-button"> <%= link_to 'Sign in', new_user_session_path  %> </button> 
+    <button class="w3-bar-item w3-button"> <%= link_to 'Sign out', destroy_user_session_path, method: :delete  %> </button>
   <br>
   <br>
   <a href="http://[::1]:3000" class="w3-bar-item w3-button">Back to Main</a>

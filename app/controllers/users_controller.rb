@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
   # GET /users or /users.json
   def index
     @users = User.all
@@ -25,6 +25,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+
+
         format.html { redirect_to user_url(@user), notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
@@ -65,6 +67,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:email, :name, :password)
+      params.require(:user).permit(:email, :name, :profile)
     end
 end

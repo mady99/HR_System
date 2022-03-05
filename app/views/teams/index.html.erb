@@ -52,7 +52,16 @@
               <td><%=team.id %></td>
               <td><%=team.name %>  </td>
               <td><%=team.description %></td>
-              <td><%=team.members %></td>
+              <td>
+                    <%y=2%>
+                    <%while y<team.members.length %>
+                      <%= Employee.find(team.members[y].to_i).name %> 
+                      <% y = y+5%>
+                      <%if y<team.members.length%>
+                        -
+                      <%end%>
+                    <%end%>
+              </td>
               <td><%=team.team_lead %></td>
             </tr>
             <tr>

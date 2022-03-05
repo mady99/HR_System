@@ -6,8 +6,10 @@ class CreateEmployees < ActiveRecord::Migration[7.0]
       t.string :job
       t.integer :salary
       t.string :employment_status
-
+      t.belongs_to :team
+      
       t.timestamps
     end
   end
+
 end

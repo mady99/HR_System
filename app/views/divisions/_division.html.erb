@@ -10,13 +10,20 @@
   </p>
 
   <p>
-    <strong>Teams:</strong>
-    <%= division.teams %>
+    <strong>Manager:</strong>
+    <%= division.manager %>
   </p>
 
   <p>
-    <strong>Manager:</strong>
-    <%= division.manager %>
+    <strong>Teams:</strong>
+    <%x=2%>
+    <%while x<division.teams.length%>
+      <%= Team.find(division.teams[x].to_i).name %> 
+      <% x = x+5%>
+      <%if x<division.teams.length%>
+        -
+      <%end%>
+    <%end%>
   </p>
 
 </div>

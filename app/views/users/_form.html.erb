@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :profile, style: "display: block" %>
+    <%= form.file_field :profile %>
+  </div>
+
   <div>
     <%= form.label :email, style: "display: block" %>
     <%= form.text_field :email %>
@@ -21,10 +26,11 @@
     <%= form.text_field :name %>
   </div>
 
-  <div>
+  <%# <div>
     <%= form.label :password, style: "display: block" %>
-    <%= form.text_field :password %>
-  </div>
+    <%# <%= form.text_field :password %>
+    <%# , <%= form.text_field :password_confirmation %> 
+  <%# </div> %> 
 
   <div>
     <%= form.submit %>

@@ -16,6 +16,13 @@ h1 {letter-spacing: 6px}
 <header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
   <h1>HR System</h1>
   
+  <% if user_signed_in?%>
+      <a href='http://localhost:3000/users/sign_out' class="w3-button w3-white w3-padding-2"></i>SignOut</a>
+    <%else%>
+      <a href='http://localhost:3000/users/sign_up' class="w3-button w3-white w3-padding-2"></i>SignUP</a>
+      <a href='http://localhost:3000/users/sign_in' class="w3-button w3-white w3-padding-2"></i>Log In</a>
+    <%end%>
+
   <div class="w3-padding-32">
     <div class="w3-bar w3-border">
       <a href="http://[::1]:3000/users" class="w3-bar-item w3-button">Users</a>
@@ -24,10 +31,10 @@ h1 {letter-spacing: 6px}
       <a href="http://[::1]:3000/goals" class="w3-bar-item w3-button w3-hide-small">Goals</a>
       <a href="http://[::1]:3000/divisions" class="w3-bar-item w3-button w3-hide-small">Divisions</a>
     </div>
+ 
   </div>
 </header>
 </div>
 
 </body>
 </html>
-

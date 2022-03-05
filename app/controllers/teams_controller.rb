@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
   # GET /teams or /teams.json
   def index
     @teams = Team.all
@@ -65,6 +65,6 @@ class TeamsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def team_params
-      params.require(:team).permit(:name, :description, :members, :team_lead)
+      params.require(:team).permit(:name, :description, :team_lead, :division_id, members: [])
     end
 end

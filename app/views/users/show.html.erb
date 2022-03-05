@@ -1,5 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
+<% if @user.profile.representable? %>
+
+  <%= image_tag(@user.profile, size: '200x200') %>  
+
+<% end %>
+
 <%= render @user %>
 
 <div>
