@@ -1,0 +1,29 @@
+<div id="<%= dom_id team %>">
+  <p>
+    <strong>Name:</strong>
+    <%= team.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= team.description %>
+  </p>
+
+  <p>
+    <strong>Members:</strong>
+    <%x=2%>
+    <%while x<team.members.length%>
+      <%= Employee.find(team.members[x].to_i).name %> 
+      <% x = x+5%>
+      <%if x<team.members.length%>
+        -
+      <%end%>
+    <%end%>
+  </p>
+
+  <p>
+    <strong>Team lead:</strong>
+    <%= team.team_lead %>
+  </p>
+
+</div>

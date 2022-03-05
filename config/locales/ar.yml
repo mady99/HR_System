@@ -1,0 +1,212 @@
+ar:
+  main:
+    HR System: نظام الموارد البشرية
+  users:
+    index:
+      users: "المستخدمون"
+      ID: "الهوية شخصية"
+      Name: "الاسم"
+      Email: "البريد الالكتروني"
+      Password: "كلمة المرور"
+      Links: "الروابط"
+  teams:
+    index:
+      teams: "الفرق"
+      Name: "الاسم"
+      Description: "الوصف"
+      Team lead: "قائد الفريق"
+      divisions_id: "القسم"
+      Members: "الأعضاء"
+      ID: "الهوية شخصية"
+      Links: "الروابط"
+      New team: "فريق جديد"
+    show:
+      name: "الاسم"
+      description: "الوصف"
+      team_lead: "قائد الفريق"
+      divisions_id: "القسم"
+      members: "الأعضاء"
+      id: "الهوية شخصية"
+  divisions:
+    index:
+      Division: "القسم"
+      ID: "الهوية شخصية"
+      Name: "الاسم"
+      Description: "الوصف"
+      Teams: "الفرق"
+      Manager: "المدير"
+      links: "الروابط"
+    show:
+      division: "القسم"
+      id: "الهوية شخصية"
+      name: "الاسم"
+      description: "الوصف"
+      teams: "الفرق"
+      manager: "المدير"
+      links: "الروابط"
+  goals:
+    index:
+      Target: الأهداف
+      Title: "اللقب"
+      ID: "الهوية شخصية"
+      Description: "الوصف"
+      Start Date: "تاريخ البدء"
+      Finish Date: "تاريخ الانتهاء"
+      Teams: "الفريق"
+      Status: الحالة
+      links: الروابط
+    show:
+      target: الأهداف
+      title: "اللقب"
+      id: "الهوية شخصية"
+      description: "الوصف"
+      start: "تاريخ البدء"
+      finish: "تاريخ الانتهاء"
+      team: "الفريق"
+      status: الحالة
+      links: الروابط
+  employees:
+    index:
+      Employees: الموظفين
+      ID: الهوية شخصية
+      Name: الاسم
+      Email: البريد الالكتروني
+      Job: الوظيفة
+      Salary: الراتب
+      Employment Status: الحالة
+      team_id: الفريق
+      links: الروابط
+    show:
+      emp: الموظفين
+      id: الهوية شخصية
+      name: الاسم
+      email: البريد الالكتروني
+      job: الوظيفة
+      salary: الراتب
+      status: الحالة
+      team_id: الفريق
+      links: الروابط
+  activerecord:
+    attributes:
+      user:
+        id: "الهوية شخصية"
+        name: "الاسم"
+        email: "البريد الالكتروني"
+        password: "كلمة المرور"
+        password_confirmation: "تأكيد كلمة المرور "
+        avatar: "الصورة الرمزية"
+      team:
+        name: "الاسم"
+        description: "الوصف"
+        team_lead: "الفريق lead"
+        divisions_id: "القسم"
+      division:
+        name: "الاسم"
+        description: "الوصف"
+        manager: "المدير" 
+      target:
+        title: "اللقب"
+        description: "الوصف"
+        start: "تاريخ البدء"
+        finish: "تاريخ الانتهاء"
+        team: "الفريق"
+        status: الحالة
+      employee:
+        name: الاسم
+        email: البريد الالكتروني
+        job: الوظيفة
+        salary: الراتب
+        status: الحالة
+        teams_id: الفريق
+
+
+  button:
+    back: العودة للقائمة
+    signin: تسجيل الدخول
+    signup: الاشتراك
+    signout: الخروج
+    delete: حذف
+    submit: التأكيد
+    show: عرض
+    edit: تحرير
+    newdiv: إضافة قسم جديد
+    newuser: إضافة مستخدم جديد
+    newemp: اضافة موظف جديد
+    newtar: إضافة هدف جديد
+    newteam: اضافة فريق جديد
+    Arabic: العربية
+
+
+
+
+
+
+
+
+
+
+
+
+
+  devise:
+    confirmations:
+      confirmed: "تم تأكيد عنوان بريدك الإلكتروني بنجاح"
+      send_instructions: "ستتلقى رسالة بريد إلكتروني تحتوي على إرشادات حول كيفية تأكيد عنوان بريدك الإلكتروني في غضون بضع دقائق"
+      send_paranoid_instructions: "إذا كان عنوان بريدك الإلكتروني موجودًا في قاعدة البيانات الخاصة بنا ، فستتلقى رسالة بريد إلكتروني تحتوي على إرشادات حول كيفية تأكيد عنوان بريدك الإلكتروني في غضون بضع دقائق"
+    failure:
+      already_authenticated: "انت مسجل مسبقا"
+      inactive: "لم يتم تنشيط حسابك بعد"
+      invalid: "أو كلمة مرور غير صالحة %{authentication_keys} غير صحيح "
+      locked: "حسابك مغلق"
+      last_attempt: "لديك محاولة أخرى قبل أن يتم قفل حسابك"
+      not_found_in_database: "أو كلمة مرور غير صالحة %{authentication_keys} غير صحيح "
+      timeout: "انتهت جلستك. الرجاء تسجيل الدخول مرة أخرى للمتابعة"
+      unauthenticated: "تحتاج إلى تسجيل الدخول أو التسجيل قبل المتابعة"
+      unconfirmed: "يجب عليك تأكيد عنوان بريدك الإلكتروني قبل المتابعة"
+    mailer:
+      confirmation_instructions:
+        subject: "تعليمات التأكيد"
+      reset_password_instructions:
+        subject: "تعليمات إعادة تعيين كلمة المرور"
+      unlock_instructions:
+        subject: "فتح التعليمات"
+      email_changed:
+        subject: "تم تغيير البريد الإلكتروني"
+      password_change:
+        subject: "تم تغيير كلمة السر"
+    omniauth_callbacks:
+      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
+      success: "Successfully authenticated from %{kind} account."
+    passwords:
+      no_token: "ا يمكنك الوصول إلى هذه الصفحة دون أن تأتي من بريد إلكتروني لإعادة تعيين كلمة المرور. إذا كنت قادمًا من بريد إلكتروني لإعادة تعيين كلمة المرور ، فيرجى التأكد من استخدام عنوان URL الكامل المقدم"
+      send_instructions: "ستتلقى رسالة بريد إلكتروني تحتوي على إرشادات حول كيفية إعادة تعيين كلمة المرور الخاصة بك في غضون بضع دقائق"
+      send_paranoid_instructions: "إذا كان عنوان بريدك الإلكتروني موجودًا في قاعدة البيانات الخاصة بنا ، فستتلقى رابطًا لاستعادة كلمة المرور على عنوان بريدك الإلكتروني في غضون بضع دقائق"
+      updated: "تم تغيير كلمة المرور الخاصة بك بنجاح. انت الآن مسجل دخولك"
+      updated_not_active: "تم تغيير كلمة المرور الخاصة بك بنجاح"
+    registrations:
+      destroyed: "وداعا! تم إلغاء حسابك بنجاح. نحن نأمل ان نراك قريبا مره اخرى."
+      signed_up: "أهلا بك! لقد قمت بالتسجيل بنجاح"
+      signed_up_but_inactive: "لقد قمت بالتسجيل بنجاح. ومع ذلك ، لم نتمكن من تسجيل دخولك لأن حسابك لم يتم تنشيطه بعد."
+      signed_up_but_locked: "لقد قمت بالتسجيل بنجاح. ومع ذلك ، لم نتمكن من تسجيل دخولك لأن حسابك مغلق"
+      signed_up_but_unconfirmed: "تم إرسال رسالة مع ارتباط التأكيد إلى عنوان بريدك الإلكتروني. يرجى اتباع الرابط لتفعيل حسابك"
+      update_needs_confirmation: "لقد قمت بتحديث حسابك بنجاح ، لكننا بحاجة إلى التحقق من عنوان بريدك الإلكتروني الجديد. يرجى التحقق من بريدك الإلكتروني واتباع رابط التأكيد لتأكيد عنوان بريدك الإلكتروني الجديد"
+      updated: "تم تحديث حسابك بنجاح"
+      updated_but_not_signed_in: "تم تحديث حسابك بنجاح ، ولكن منذ تغيير كلمة المرور الخاصة بك ، تحتاج إلى تسجيل الدخول مرة أخرى"
+    sessions:
+      signed_in: "تم تسجيل الدخول بنجاح"
+      signed_out: "تم تسجيل الخروج بنجاح"
+      already_signed_out: "تم تسجيل الخروج بنجاح"
+    unlocks:
+      send_instructions: "ستتلقى رسالة بريد إلكتروني تحتوي على إرشادات حول كيفية فتح حسابك في غضون دقائق قليلة"
+      send_paranoid_instructions: "إذا كان حسابك موجودًا ، فستتلقى رسالة بريد إلكتروني تحتوي على إرشادات حول كيفية فتحه في غضون بضع دقائق"
+      unlocked: "تم فتح حسابك بنجاح. من فضلك سجل دخولك للمتابعة"
+  errors:
+    messages:
+      already_confirmed: "تم التأكيد بالفعل ، يرجى محاولة تسجيل الدخول"
+      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+      expired: "منتهية الصلاحية ، يرجى طلب واحدة جديدة"
+      not_found: "لم يتم العثور"
+      not_locked: "لم يكن مؤمنا"
+      not_saved:
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:" 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+#users {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#users td, #users th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#users tr:nth-child(even){background-color: #f2f2f2;}
+
+#users tr:hover {background-color: #ddd;}
+
+#users th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: blue;
+  color: white;
+}
+</style>
+<body>
+
+  <p style="color: green"><%= notice %></p>
+
+  <% @users = User.all %>
+
+  <h1> <%= t 'users.index.users' %> </h1>
+
+  <div id="users">
+      <table id="users">
+        <tr>
+          <th><%= t 'users.index.ID'%> </th>
+          <th><%= t 'users.index.Email'%></th>
+          <th><%= t 'users.index.Name'%></th>
+        </tr>
+         <% @users.each do |user| %>
+        
+          <tr>
+            <td><%=user.id %></td>
+            <td><%=user.email %>  </td>
+            <td><%=user.name %></td>
+          </tr>
+          <tr>
+            <td>
+            <button class="w3-bar-item w3-button"> <%= link_to I18n.t('button.show'), user %> </button>
+            </td>
+          </tr>
+        <% end %>
+          </table>
+  </div>
+  <br>
+     <br>
+    <%# <button class="w3-bar-item w3-button"> <%= link_to 'New User', new_user_registration_path </button>  %>
+    <%# <button class="w3-bar-item w3-button"> <%= link_to 'Sign in', new_user_session_path  </button>  %>
+    <%# <button class="w3-bar-item w3-button"> <%= link_to 'Sign out', destroy_user_session_path, method: :delete  </button>  %>
+  <br>
+  <br>
+  <a href="http://[::1]:3000/?locale=en" class="w3-bar-item w3-button"><%= t 'button.back' %></a>
+</body>
+</html>
