@@ -1,0 +1,167 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   "true": "foo"
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+
+  users:
+    index:
+      users: "Users"
+      back: "Back"
+      add: "Add New User"
+      ID: "ID"
+      Name: "Name"
+      Email: "Email"
+      Password: "Password"
+      Links: "Links"
+  team:
+    index:
+      teams: "Teams"
+      name: "Name"
+      description: "Description"
+      team_lead: "Team Lead"
+      divisions_id: "Division"
+      members: "Members"
+      id: "ID"
+      Links: "Links"
+    show:
+      name: "Name"
+      description: "Description"
+      team_lead: "Team Lead"
+      divisions_id: "Division"
+      members: "Members"
+      id: "ID"
+  division:
+    index:
+      division: "Divisions"
+      id: "ID"
+      name: "Name"
+      description: "Description"
+      teams: "Teams"
+      manager: "Manager"
+      links: "Links"
+    show:
+      division: "Divisions"
+      id: "ID"
+      name: "Name"
+      description: "Description"
+      teams: "Teams"
+      manager: "Manager"
+      links: "Links"
+  target:
+    index:
+      target: Targets
+      title: "Title"
+      id: "ID"
+      description: "Description"
+      start: "Start Date"
+      finish: "Finish Date"
+      team: "Team"
+      status: Status
+      links: Links
+    show:
+      target: Targets
+      title: "Title"
+      id: "ID"
+      description: "Description"
+      start: "Start Date"
+      finish: "Finish Date"
+      team: "Team"
+      status: status
+      links: Links
+  employee:
+    index:
+      emp: Employees
+      id: ID
+      name: Name
+      email: Email
+      job: Job
+      salary: Salary
+      status: Status
+      team_id: Team
+      links: Links
+    show:
+      emp: Employees
+      id: ID
+      name: Name
+      email: Email
+      job: Job
+      salary: Salary
+      status: Status
+      team_id: Team
+      links: Links
+  activerecord:
+    attributes:
+      user:
+        id: "ID"
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        avatar: "Avatar"
+      team:
+        name: "Name"
+        description: "Description"
+        team_lead: "Team lead"
+        divisions_id: "Division"
+      division:
+        name: "Name"
+        description: "Description"
+        manager: "Manager" 
+      target:
+        title: "Title"
+        description: "Description"
+        start: "Start Date"
+        finish: "Finish Date"
+        team: "Team"
+        status: Status
+      employee:
+        name: Name
+        email: Email
+        job: Job
+        salary: Salary
+        status: Status
+        teams_id: Team
+
+  button:
+    back: Back
+    signin: Sign In
+    signup: Sign Up
+    signout: Sign Out
+    delete: Delete
+    submit: Submit
+    show: Show
+    edit: Edit
+    newdiv: Add New Division
+    newuser: Add New User
+    newemp: Add New Employee
+    newtar: Add New Target
+    newteam: Add New Team
