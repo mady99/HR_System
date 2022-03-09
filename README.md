@@ -23,3 +23,10 @@ Things you may want to cover:
 
 * ...
 # HR_System
+* Models and controllers were created. 
+# The video of the running code:
+Link: https://drive.google.com/file/d/1iXUtNgeAPLbCPJtuEIfBF_zWmhe10G8J/view?usp=sharing
+
+# Video of running the web app (HR system)
+* Here I added the assets pipeline tasks and I used Bootstrap in the HTML elements.
+* https://drive.google.com/file/d/1d3N4DquprfLGOMjeU_YtMuZl3ZvWS67h/view?usp=sharing
