@@ -23,3 +23,9 @@ Things you may want to cover:
 
 * ...
 # HR_System
+* Models and controllers were created. 
+* Associations and Validators were added.
+# The video of the running code:
+Link: https://drive.google.com/file/d/1iXUtNgeAPLbCPJtuEIfBF_zWmhe10G8J/view?usp=sharing
+# Video of the second submission:
+Link: https://drive.google.com/file/d/1rAlmbxA4myuTDWcLtPySTBCJ0Aw5GZzS/view?usp=sharing

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+#divisions {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#divisions td, #divisions th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#divisions tr:nth-child(even){background-color: #f2f2f2;}
+
+#divisions tr:hover {background-color: #ddd;}
+
+#divisions th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: blue;
+  color: white;
+}
+</style>
+<body>
+
+  <p style="color: green"><%= notice %></p>
+
+  <% @divisions = Division.all %>
+
+  <h1>Divisions Table</h1>
+
+  <div id="divisions">
+      <table id="divisions">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Teams</th>
+          <th>Manager</th>
+        </tr>
+         <% @divisions.each do |division| %>
+            <tr>
+              <td><%=division.id %></td>
+              <td><%=division.name %>  </td>
+              <td><%=division.description %></td>
+              <td><%=division.teams %></td>
+              <td><%=division.manager %></td>
+            </tr>
+            <tr>
+              <td>
+              <button class="w3-bar-item w3-button"> <%= link_to "Show this division", division %> </button>
+              </td>
+            </tr>
+        <% end %>
+      </table>
+  </div>
+  <br>
+  <button class="w3-bar-item w3-button"> <%= link_to "New division", new_division_path %> </button>
+  <br>
+  <br>
+  <a href="http://[::1]:3000" class="w3-bar-item w3-button">Back to Main</a>
+</body>
+</html>

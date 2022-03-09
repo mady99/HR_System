@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+#employees {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#employees td, #employees th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#employees tr:nth-child(even){background-color: #f2f2f2;}
+
+#employees tr:hover {background-color: #ddd;}
+
+#employees th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: blue;
+  color: white;
+}
+</style>
+<body>
+
+  <p style="color: green"><%= notice %></p>
+
+  <% @employees = Employee.all %>
+
+  <h1>Employees Table</h1>
+
+  <div id="employees">
+      <table id="employees">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Job</th>
+          <th>Salary</th>
+          <th>Employment Status</th>
+        </tr>
+         <% @employees.each do |employee| %>
+            <tr>
+              <td><%=employee.id %></td>
+              <td><%=employee.name %>  </td>
+              <td><%=employee.email %></td>
+              <td><%=employee.job %></td>
+              <td><%=employee.salary %></td>
+              <td><%=employee.employment_status %></td>
+            </tr>
+            <tr>
+              <td>
+              <button class="w3-bar-item w3-button"> <%= link_to "Show this employee", employee %> </button>
+              </td>
+            </tr>
+        <% end %>
+      </table>
+  </div>
+  <br>
+  <button class="w3-bar-item w3-button"> <%= link_to "New employee", new_employee_path %> </button>
+  <br>
+  <br>
+  <a href="http://[::1]:3000" class="w3-bar-item w3-button">Back to Main</a>
+</body>
+</html>

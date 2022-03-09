@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+#teams {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#teams td, #teams th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#teams tr:nth-child(even){background-color: #f2f2f2;}
+
+#teams tr:hover {background-color: #ddd;}
+
+#teams th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: blue;
+  color: white;
+}
+</style>
+<body>
+
+  <p style="color: green"><%= notice %></p>
+
+  <% @teams = Team.all %>
+
+  <h1>Teams Table</h1>
+
+  <div id="teams">
+      <table id="teams">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Members</th>
+          <th>Team Lead</th>
+        </tr>
+         <% @teams.each do |team| %>
+            <tr>
+              <td><%=team.id %></td>
+              <td><%=team.name %>  </td>
+              <td><%=team.description %></td>
+              <td><%=team.members %></td>
+              <td><%=team.team_lead %></td>
+            </tr>
+            <tr>
+              <td>
+              <button class="w3-bar-item w3-button"> <%= link_to "Show this team", team %> </button>
+              </td>
+            </tr>
+        <% end %>
+      </table>
+  </div>
+  <br>
+  <button class="w3-bar-item w3-button"> <%= link_to "New team", new_team_path %> </button>
+  <br>
+  <br>
+  <a href="http://[::1]:3000" class="w3-bar-item w3-button">Back to Main</a>
+</body>
+</html>
