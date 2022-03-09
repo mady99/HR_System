@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+#goals {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#goals td, #goals th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#goals tr:nth-child(even){background-color: #f2f2f2;}
+
+#goals tr:hover {background-color: #ddd;}
+
+#goals th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: cornflowerblue;
+  color: white;
+}
+</style>
+<body>
+
+  <p style="color: green"><%= notice %></p>
+
+  <% @goals = Goal.all %>
+
+  <h1><%= t 'goals.index.Target' %></h1>
+
+  <div id="goals">
+      <table id="goals">
+        <tr>
+          <th><%= t 'goals.index.ID' %></th>
+          <th><%= t 'goals.index.Title' %></th>
+          <th><%= t 'goals.index.Description' %></th>
+          <th><%= t 'goals.index.Start Date' %></th>
+          <th><%= t 'goals.index.Finish Date' %></th>
+          <th><%= t 'goals.index.Attribute' %></th>
+          <th><%= t 'goals.index.Teams' %></th>
+          <th><%= t 'goals.index.Status' %></th>
+          <th><%= t 'users.index.Action' %> </th>
+        </tr>
+         <% @goals.each do |goal| %>
+            <tr>
+              <td><%=goal.id %></td>
+              <td><%=goal.title %>  </td>
+              <td><%=goal.description %></td>
+              <td><%=goal.start_date %></td>
+              <td><%=goal.finish_date %></td>
+              <td><%=goal.attrib %></td>
+              <td><%=goal.teammss %></td>
+              <td><%=goal.status %></td>
+              <td> <%= button_to "Delete", goal, method: :delete %>
+                 <%= link_to "Edit", edit_goal_path(goal) %> </td>
+            </tr>
+            <tr>
+              <td>
+              <button class="w3-bar-item w3-button"> <%= link_to I18n.t('button.show'), goal %> </button>
+              </td>
+            </tr>
+        <% end %>
+      </table>
+  </div>
+  <br>
+  <button class="w3-bar-item w3-button"> <%= link_to I18n.t('button.newtar'), new_goal_path %> </button>
+  <br>
+  <br>
+  <a href="http://[::1]:3000/?locale=en" class="w3-bar-item w3-button"><%= t 'button.back' %></a>
+</body>
+</html>

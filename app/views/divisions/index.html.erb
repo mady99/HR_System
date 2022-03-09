@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+#divisions {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#divisions td, #divisions th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#divisions tr:nth-child(even){background-color: #f2f2f2;}
+
+#divisions tr:hover {background-color: #ddd;}
+
+#divisions th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: cornflowerblue;
+  color: white;
+}
+</style>
+<body>
+
+  <p style="color: green"><%= notice %></p>
+
+  <% @divisions = Division.all %>
+
+  <h1><%= t 'divisions.index.Division' %></h1>
+
+  <div id="divisions">
+      <table id="divisions">
+        <tr>
+          <th><%= t 'divisions.index.ID' %></th>
+          <th><%= t 'divisions.index.Name' %></th>
+          <th><%= t 'divisions.index.Description' %></th>
+          <th><%= t 'divisions.index.Teams' %></th>
+          <th><%= t 'divisions.index.Manager' %></th>
+          <th><%= t 'users.index.Action' %> </th>
+        </tr>
+         <% @divisions.each do |division| %>
+            <tr>
+              <td><%=division.id %></td>
+              <td><%=division.name %>  </td>
+              <td><%=division.description %></td>
+              <td>
+                    <%y=2%>
+                    <%while y<division.teams_id.length %>
+                      <%= Team.find(division.teams_id[y].to_i).name %> 
+                      <% y = y+5%>
+                      <%if y<division.teams_id.length%>
+                        -
+                      <%end%>
+                    <%end%>
+              </td>
+              <td><%=division.manager %></td>
+              <td> <%= button_to "Delete", division, method: :delete %>
+                 <%= link_to "Edit", edit_division_path(division) %> </td>
+            </tr>
+            <tr>
+              <td>
+              <button class="w3-bar-item w3-button"> <%= link_to I18n.t('button.show'), division %> </button>
+              </td>
+            </tr>
+        <% end %>
+      </table>
+  </div>
+  <br>
+  <button class="w3-bar-item w3-button"> <%= link_to I18n.t('button.newdiv'), new_division_path %> </button>
+  <br>
+  <br>
+  <a href="http://[::1]:3000/?locale=en" class="w3-bar-item w3-button"><%= t 'button.back' %></a>
+</body>
+</html>
