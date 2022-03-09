@@ -26,7 +26,7 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: blue;
+  background-color: cornflowerblue;
   color: white;
 }
 </style>
@@ -49,6 +49,7 @@
           <th><%= t 'goals.index.Attribute' %></th>
           <th><%= t 'goals.index.Teams' %></th>
           <th><%= t 'goals.index.Status' %></th>
+          <th><%= t 'users.index.Action' %> </th>
         </tr>
          <% @goals.each do |goal| %>
             <tr>
@@ -60,6 +61,8 @@
               <td><%=goal.attrib %></td>
               <td><%=goal.teammss %></td>
               <td><%=goal.status %></td>
+              <td> <%= button_to "Delete", goal, method: :delete %>
+                 <%= link_to "Edit", edit_goal_path(goal) %> </td>
             </tr>
             <tr>
               <td>

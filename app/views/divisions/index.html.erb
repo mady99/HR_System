@@ -26,7 +26,7 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: blue;
+  background-color: cornflowerblue;
   color: white;
 }
 </style>
@@ -46,6 +46,7 @@
           <th><%= t 'divisions.index.Description' %></th>
           <th><%= t 'divisions.index.Teams' %></th>
           <th><%= t 'divisions.index.Manager' %></th>
+          <th><%= t 'users.index.Action' %> </th>
         </tr>
          <% @divisions.each do |division| %>
             <tr>
@@ -54,15 +55,17 @@
               <td><%=division.description %></td>
               <td>
                     <%y=2%>
-                    <%while y<division.teams.length %>
-                      <%= Team.find(division.teams[y].to_i).name %> 
+                    <%while y<division.teams_id.length %>
+                      <%= Team.find(division.teams_id[y].to_i).name %> 
                       <% y = y+5%>
-                      <%if y<division.teams.length%>
+                      <%if y<division.teams_id.length%>
                         -
                       <%end%>
                     <%end%>
               </td>
               <td><%=division.manager %></td>
+              <td> <%= button_to "Delete", division, method: :delete %>
+                 <%= link_to "Edit", edit_division_path(division) %> </td>
             </tr>
             <tr>
               <td>

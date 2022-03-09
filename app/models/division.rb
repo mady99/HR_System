@@ -1,6 +1,6 @@
 class Division < ApplicationRecord
     # belongs_to :employee
-    has_many :teams
+    has_many :teams, dependent: :destroy
     has_one :employee
 
     validates :name, presence: true

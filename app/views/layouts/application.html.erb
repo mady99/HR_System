@@ -6,11 +6,71 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag "bootstrap", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "bootstrap", "data-turbo-track": "reload" %>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-  </head>
+      
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  </head>
   <body>
-    <%= yield %>
+    <%# <%= render "layouts/top_nav" %>
+    <%# <%= render "layouts/side_nav" %> 
+    <%# <%= render "layouts/footer" %> 
+    <div class="topnav" style="height: 150px; background-color: cornflowerblue">
+      <%= image_tag "download.png", size: "150x150" %>
+
+      <% if user_signed_in? %>
+          <a href="http://localhost:3000/users/sign_out">
+              <%= image_tag "download2.png", size: "150x150", style: "float: right" %>
+          </a>
+      <% else %>
+          <a href='http://localhost:3000/users/sign_up' class="w3-button w3-white w3-padding-2", style= "float: right; margin-top:50px"></i><%= t 'button.signup' %></a>
+          <a href='http://localhost:3000/users/sign_in' class="w3-button w3-white w3-padding-2", style= "float: right; margin-top:50px"></i><%= t 'button.signin' %></a>
+      <% end %>
+    </div>
+
+    <div class="row">
+      <div class="sidenav col-4">
+          <ul style= "list-style-type: none">
+              <li>
+                  <a href="http://[::1]:3000/users/?locale=en" class="w3-bar-item w3-button"><%= t 'users.index.users' %></a>
+              </li>
+              <li>
+                  <a href="http://[::1]:3000/employees/?locale=en" class="w3-bar-item w3-button"><%= t 'employees.index.Employees' %></a>
+              </li>
+              <li>
+                  <a href="http://[::1]:3000/teams/?locale=en" class="w3-bar-item w3-button"><%= t 'teams.index.teams' %></a>
+              </li>
+              <li>
+                  <a href="http://[::1]:3000/goals/?locale=en" class="w3-bar-item w3-button w3-hide-small"><%= t 'goals.index.Target' %></a>
+              </li>
+              <li>
+                  <a href="http://[::1]:3000/divisions/?locale=en" class="w3-bar-item w3-button w3-hide-small"><%= t 'divisions.index.Division' %></a>
+              </li>
+          </ul>
+      </div>
+      <div class="col-9">
+        <%= yield %>
+      </div>
+    </div>
+
+    <div class="footer" style="margin-top: 200px; text-align: center;">
+          <a href='?locale=en' class="w3-button w3-white w3-padding-2"></i>English</a>
+          <a href='?locale=ar' class="w3-button w3-white w3-padding-2"></i><%= t 'button.Arabic' %></a>
+
+          <p> Copyright @ 2022 - Sprints - author: Mady , e-mail: ahmed.mady99@gmail.com </p>
+    </div>
+
+    <%# </header>
+    </div> %>
+        <%# <%= yield %> 
   </body>
 </html>

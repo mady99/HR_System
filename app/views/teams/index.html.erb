@@ -26,7 +26,7 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: blue;
+  background-color: cornflowerblue;
   color: white;
 }
 </style>
@@ -46,6 +46,7 @@
           <th><%= t 'teams.index.Description'%></th>
           <th><%= t 'teams.index.Members'%></th>
           <th><%= t 'teams.index.Team lead'%></th>
+          <th><%= t 'users.index.Action' %> </th>
         </tr>
          <% @teams.each do |team| %>
             <tr>
@@ -63,6 +64,8 @@
                     <%end%>
               </td>
               <td><%=team.team_lead %></td>
+              <td> <%= button_to "Delete", team, method: :delete %>
+                 <%= link_to "Edit", edit_team_path(team) %> </td>
             </tr>
             <tr>
               <td>

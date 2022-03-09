@@ -44,6 +44,7 @@ en:
       Email: "Email"
       Password: "Password"
       Links: "Links"
+      Action: "Action"
   team:
     index:
       teams: "Teams"

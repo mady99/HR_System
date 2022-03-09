@@ -9,6 +9,7 @@ ar:
       Email: "البريد الالكتروني"
       Password: "كلمة المرور"
       Links: "الروابط"
+      Action: "التصرف"
   teams:
     index:
       teams: "الفرق"

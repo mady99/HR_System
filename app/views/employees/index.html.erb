@@ -26,7 +26,7 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: blue;
+  background-color: cornflowerblue;
   color: white;
 }
 </style>
@@ -38,33 +38,37 @@
 
   <h1><%= t 'employees.index.Employees' %></h1>
 
-  <div id="employees">
-      <table id="employees">
-        <tr>
-          <th><%= t 'employees.index.ID' %></th>
-          <th><%= t 'employees.index.Name' %></th>
-          <th><%= t 'employees.index.Email' %></th>
-          <th><%= t 'employees.index.Job' %></th>
-          <th><%= t 'employees.index.Salary' %></th>
-          <th><%= t 'employees.index.Employment Status' %></th>
-        </tr>
-         <% @employees.each do |employee| %>
-            <tr>
-              <td><%=employee.id %></td>
-              <td><%=employee.name %>  </td>
-              <td><%=employee.email %></td>
-              <td><%=employee.job %></td>
-              <td><%=employee.salary %></td>
-              <td><%=employee.employment_status %></td>
-            </tr>
-            <tr>
-              <td>
-              <button class="w3-bar-item w3-button"> <%= link_to I18n.t('button.show'), employee %> </button>
-              </td>
-            </tr>
-        <% end %>
-      </table>
-  </div>
+    <div id="employees " >
+        <table id="employees">
+          <tr>
+            <th><%= t 'employees.index.ID' %></th>
+            <th><%= t 'employees.index.Name' %></th>
+            <th><%= t 'employees.index.Email' %></th>
+            <th><%= t 'employees.index.Job' %></th>
+            <th><%= t 'employees.index.Salary' %></th>
+            <th><%= t 'employees.index.Employment Status' %></th>
+            <th><%= t 'users.index.Action' %> </th>
+          </tr>
+          <% @employees.each do |employee| %>
+              <tr>
+                <td><%=employee.id %></td>
+                <td><%=employee.name %>  </td>
+                <td><%=employee.email %></td>
+                <td><%=employee.job %></td>
+                <td><%=employee.salary %></td>
+                <td><%=employee.employment_status %></td>
+                <td> <%= button_to "Delete", employee, method: :delete %>
+                  <%= link_to "Edit", edit_employee_path(employee) %> </td>
+              </tr>
+              <tr>
+                <td>
+                <button class="w3-bar-item w3-button"> <%= link_to I18n.t('button.show'), employee %> </button>
+                </td>
+              </tr>
+          <% end %>
+        </table>
+    </div>
+    
   <br>
   <button class="w3-bar-item w3-button"> <%= link_to I18n.t('button.newemp'), new_employee_path %> </button>
   <br>
